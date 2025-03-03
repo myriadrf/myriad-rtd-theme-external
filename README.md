@@ -86,12 +86,13 @@ npm run <script-name>
 ```
 
 For example, to start the development environment:
-NOTE: ensure you have python3-venv installed before running `npm run start`.
 
 ```bash
 npm run start
 npm run dev
 ```
+
+NOTE: ensure you have python3-venv installed before running `npm run start`.
 
 ## How It Works
 

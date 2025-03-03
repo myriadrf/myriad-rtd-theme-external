@@ -1,0 +1,9 @@
+_build
+venv/
+docs/venv/
+node_modules/
+*.DS_Store
+Thumbs.db
+*.swp
+~*
+*~

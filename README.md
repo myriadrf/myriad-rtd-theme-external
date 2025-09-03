@@ -26,8 +26,8 @@ def fetch_remote_content(url):
         return ""
 
 # Fetch navbar and footer content
-extrabody_content = fetch_remote_content('https://handbook-concept.netlify.app/hosted/_templates/navbar.html')
-extrafooter_content = fetch_remote_content('https://handbook-concept.netlify.app/hosted/_templates/footer.html')
+extrabody_content = fetch_remote_content('https://myriad-rtd-assets.netlify.app/navbar.html')
+extrafooter_content = fetch_remote_content('https://myriad-rtd-assets.netlify.app/footer.html')
 ```
 
 This content is then passed to the Jinja2 template context:
@@ -45,7 +45,7 @@ html_context = {
 Remote CSS is included in the documentation using:
 
 ```python
-html_css_files = ['https://handbook-concept.netlify.app/hosted/_static/mr-custom.css']
+html_css_files = ['https://myriad-rtd-assets.netlify.app//mr-custom.css']
 ```
 
 ### 3. Template Integration

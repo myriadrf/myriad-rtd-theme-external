@@ -30,8 +30,8 @@ def fetch_remote_content(url):
         print(f"Error fetching {url}: {e}")
         return ""
 
-extrabody_content = fetch_remote_content('https://handbook-concept.netlify.app/hosted/_templates/navbar.html')
-extrafooter_content = fetch_remote_content('https://handbook-concept.netlify.app/hosted/_templates/footer.html')
+extrabody_content = fetch_remote_content('https://myriad-rtd-assets.netlify.app/navbar.html')
+extrafooter_content = fetch_remote_content('https://myriad-rtd-assets.netlify.app/footer.html')
 
 # -- Project information -----------------------------------------------------
 
@@ -67,9 +67,9 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['venv', '_build', 'Thumbs.db', '.DS_Store']
 
-html_static_path = ['_static']
+# html_static_path = ['_static']
 
-html_css_files = ['https://handbook-concept.netlify.app/hosted/_static/mr-custom.css']
+html_css_files = ['https://myriad-rtd-assets.netlify.app//mr-custom.css']
 
 html_last_updated_fmt = '%b %d, %Y'
 

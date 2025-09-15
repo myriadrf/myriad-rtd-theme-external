@@ -45,7 +45,7 @@ html_context = {
 Remote CSS is included in the documentation using:
 
 ```python
-html_css_files = ['https://myriad-rtd-assets.netlify.app//mr-custom.css']
+html_css_files = ['https://myriad-rtd-assets.netlify.app/mr-custom.css']
 ```
 
 ### 3. Template Integration
@@ -73,7 +73,7 @@ This project uses several NPM scripts to automate common tasks:
 
 | Script | Description |
 |--------|-------------|
-| `npm run start` | Sets up the Python virtual environment and installs required dependencies |
+| `npm run init` | Initialises the Python virtual environment and installs required dependencies |
 | `npm run build` | Builds the Sphinx documentation using the `make html` command |
 | `npm run watch` | Watches for changes in .rst files and automatically rebuilds documentation |
 | `npm run serve` | Starts a browser-sync server to preview documentation on port 8000 |
@@ -88,11 +88,11 @@ npm run <script-name>
 For example, to start the development environment:
 
 ```bash
-npm run start
+npm run init
 npm run dev
 ```
 
-NOTE: ensure you have python3-venv installed before running `npm run start`.
+NOTE: ensure you have python3-venv installed before running `npm run init`.
 
 ## How It Works
 

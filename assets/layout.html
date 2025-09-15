@@ -1,0 +1,6 @@
+{% extends "!layout.html" %} {% block extrabody %} {{ super() }} {{
+extrabody|safe if extrabody else "" }} {% endblock %} {% block content %}
+<h2 class="custom-message">
+    <span class="fa fa-info-circle"></span>This project is archived
+</h2>
+{{ super() }} {% endblock %}

@@ -30,19 +30,27 @@ def fetch_remote_content(url):
         print(f"Error fetching {url}: {e}")
         return ""
 
-extrabody_content = fetch_remote_content('https://myriad-rtd-assets.netlify.app/navbar.html')
-extrafooter_content = fetch_remote_content('https://myriad-rtd-assets.netlify.app/footer.html')
+
+# -- Archived Project Configuration ------------------------------------------
+archived_project = False  # Set to False for active projects
+
+extrabody_content = fetch_remote_content(
+    "https://myriad-rtd-assets.netlify.app/navbar.html"
+)
+extrafooter_content = fetch_remote_content(
+    "https://myriad-rtd-assets.netlify.app/footer.html"
+)
 
 # -- Project information -----------------------------------------------------
 
-project = 'MyriadRF Community Handbook'
-copyright = '2021, 2023 MyriadRF Contributors'
-author = 'Lime Microsystems'
+project = "MyriadRF Community Handbook"
+copyright = "2021, 2023 MyriadRF Contributors"
+author = "Lime Microsystems"
 
 # The full version, including alpha/beta/rc tags
-release = '23.09'
+release = "23.09"
 
-highlight_language = 'console'
+highlight_language = "console"
 
 # -- General configuration ---------------------------------------------------
 
@@ -51,35 +59,40 @@ highlight_language = 'console'
 # ones.
 
 extensions = [
-    'sphinx.ext.autosectionlabel',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.mathjax',
-    'sphinx-mathjax-offline',
-    'sphinx_code_tabs',
-    'sphinx_rtd_theme'
+    "sphinx.ext.autosectionlabel",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.mathjax",
+    "sphinx-mathjax-offline",
+    "sphinx_code_tabs",
+    "sphinx_rtd_theme",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['venv', '_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ["venv", "_build", "Thumbs.db", ".DS_Store"]
 
 # html_static_path = ['_static']
 
-html_css_files = ['https://myriad-rtd-assets.netlify.app//mr-custom.css']
+html_css_files = [
+    "https://myriad-rtd-assets.netlify.app/mr-archived.css"
+    if archived_project
+    else "https://myriad-rtd-assets.netlify.app/mr-custom.css"
+]
 
-html_last_updated_fmt = '%b %d, %Y'
+html_last_updated_fmt = "%b %d, %Y"
 
 html_context = {
-    'extrabody': extrabody_content,
-    'extrafooter': extrafooter_content,
-    'display_github': True,
-    'github_user': 'myriadrf',
-    'github_repo': 'handbook',
-    'github_version': 'master/'
+    "extrabody": extrabody_content,
+    "extrafooter": extrafooter_content,
+    "display_github": True,
+    "github_user": "myriadrf",
+    "github_repo": "handbook",
+    "github_version": "master/",
+    "archived": archived_project,
 }
 
 # This is where we place substitutions, such as for Unicode characters.
@@ -91,12 +104,12 @@ rst_epilog = """
 autosectionlabel_prefix_document = True
 
 # Generate SVG format images from LaTeX math embedded in RST documents.
-#imgmath_image_format = 'svg'
+# imgmath_image_format = 'svg'
 
 # Default size of 12pt for equations is a bit small.
-#imgmath_font_size = 16
+# imgmath_font_size = 16
 
-#mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+# mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -107,19 +120,19 @@ autosectionlabel_prefix_document = True
 html_theme = "sphinx_rtd_theme"
 
 html_theme_options = {
-    'logo_only': False,
-    'display_version': True,
-    'collapse_navigation': False,
-    'sticky_navigation': True,
-    'navigation_depth': 4
+    "logo_only": False,
+    "display_version": True,
+    "collapse_navigation": False,
+    "sticky_navigation": True,
+    "navigation_depth": 4,
 }
 
-#html_logo = 'images/LimeADPD_logo_200w.png'
-#html_favicon = 'images/LimeADPD_favicon_34x34.png'
+# html_logo = 'images/LimeADPD_logo_200w.png'
+# html_favicon = 'images/LimeADPD_favicon_34x34.png'
 
 html_show_sphinx = False
 
-root_doc = 'index'
+root_doc = "index"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
